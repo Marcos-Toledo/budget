@@ -3,15 +3,17 @@
   "version": "1.0.0",
   "main": "index.js",
   "dependencies": {
+    "@expo/vector-icons": "^15.0.2",
     "@react-native-async-storage/async-storage": "2.2.0",
-    "@react-native-masked-view/masked-view": "^0.3.2",
-    "@react-navigation/stack": "^7.10.22",
+    "@react-navigation/native": "^7.3.16",
+    "@react-navigation/native-stack": "^7.18.8",
     "expo": "~57.0.11",
     "expo-status-bar": "~57.0.1",
-    "mage-icons-react": "^0.7.0-beta",
     "react": "19.2.3",
     "react-native": "0.86.2",
-    "react-native-gesture-handler": "^3.1.0"
+    "react-native-safe-area-context": "^5.8.1",
+    "react-native-screens": "^4.27.0",
+    "react-native-vector-icons": "^10.3.0"
   },
   "publishConfig": {
     "executableFiles": [
@@ -27,11 +29,13 @@
   "private": true,
   "devDependencies": {
     "@eslint/js": "^10.0.1",
+    "@types/react": "^19.2.18",
     "@typescript-eslint/eslint-plugin": "^8.66.0",
     "@typescript-eslint/parser": "^8.66.0",
     "eslint": "^10.8.1",
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^7.1.1",
-    "eslint-plugin-react-native": "^5.0.0"
+    "eslint-plugin-react-native": "^5.0.0",
+    "typescript": "~6.0.3"
   }
 }

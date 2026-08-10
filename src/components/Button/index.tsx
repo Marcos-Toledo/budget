@@ -1,5 +1,4 @@
 import { TouchableOpacity, Text } from "react-native";
-import { MaterialIcons } from "@expo/vector-icons/";
 import { SpriteIcon } from "@/components/Icon"
 
 import { styles } from "./styles";
@@ -17,8 +16,8 @@ type Props = {
 
 export function Button({ label, type }: Props) {
   return (
-    <TouchableOpacity style={[styles.container, styles[`${type}`]]}>
-      <SpriteIcon name="sendUpRight" color={styles[`${type}`].color} strokeWidth={1.5} />
+    <TouchableOpacity style={[styles.container, styles[`${type}`]]} activeOpacity={0.8}>
+      <SpriteIcon name="sendUpRight" color={styles[`${type}`].color} />
       <Text style={[styles.label, styles[`${type}`]]}>{label}</Text>
     </TouchableOpacity>
   )

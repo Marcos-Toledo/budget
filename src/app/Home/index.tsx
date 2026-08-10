@@ -1,11 +1,10 @@
 import {View, Text} from "react-native"
-import { Checkbox } from "@/components/Checkbox"
+import { typography } from "@/styles/typography"
 
 export function Home() {
   return (
     <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-      <Text>Ola, mundo!</Text>
-      <Checkbox />
+      <Text style={{ ...typography.textXs }}>Ola, mundo!</Text>
     </View>
   )
 }

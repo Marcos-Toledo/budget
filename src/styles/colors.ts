@@ -4,6 +4,7 @@ export const colors = {
     "purple-base": "#6A46EB"
   },
   base: {
+    "white": "#ffffff",
     "gray-100": "#FAFAFA",
     "gray-200": "#F0F0F0",
     "gray-300": "#E6E5E5",

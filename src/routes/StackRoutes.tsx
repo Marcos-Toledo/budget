@@ -1,6 +1,7 @@
 import { createNativeStackNavigator, NativeStackScreenProps } from "@react-navigation/native-stack"
 
 import { Home } from "@/app/Home"
+import { colors } from "@/styles/colors"
 
 export type StackRouteList = {
   home: undefined
@@ -15,7 +16,10 @@ export function StackRoutes() {
   return (
     <Stack.Navigator
       screenOptions={{
-        headerShown: false
+        headerShown: false,
+        contentStyle: {
+          backgroundColor: colors.base.white
+        }
       }}
     >
       <Stack.Screen name="home" component={Home} />

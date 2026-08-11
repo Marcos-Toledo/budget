@@ -1,4 +1,4 @@
-import { View, Text } from "react-native";
+import { View, Text, ViewStyle } from "react-native";
 import { MaterialIcons } from "@expo/vector-icons";
 
 import { styles } from "./styles";
@@ -10,13 +10,14 @@ export enum StatusEnum {
   reject = "Recusado"
 }
 
-type StatusProps = {
+export type StatusProps = {
   status: "sent" | "draft" | "approved" | "reject",
+  style?: ViewStyle
 }
 
-export function Status({ status }: StatusProps) {
+export function Status({ status, style }: StatusProps) {
   return (
-    <View style={[styles.container, styles[status]]}>
+    <View style={[styles.container, style, styles[status]]}>
       <MaterialIcons name="circle" size={12} style={styles[`${status}-icon`]} />
       <Text>{StatusEnum[status]}</Text>
     </View>

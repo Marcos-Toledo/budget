@@ -1,14 +1,22 @@
 import { useState, useEffect } from "react";
 import { TextInput, View, Text } from 'react-native';
+
 import { SpriteIcon } from "../Icon";
+import { IconName } from "../Icon/icons";
+
 import { colors } from "@/styles/colors";
 import { styles } from "./styles";
 
 const { base, principal, feedback } = colors
 
-type Props = { placeholder?: string, hasError?: boolean }
+type Props = {
+  icon?: IconName
+  label?: string 
+  placeholder?: string
+  hasError?: boolean
+}
 
-export function Input({ placeholder = "Digite aqui...", hasError = false }: Props) {
+export function Input({ placeholder = "Digite aqui...", hasError = false, icon = "calendar", label }: Props) {
   const [text, setText] = useState("")
   const [isFocused, setIsfocused] = useState(false)
   const [isError, setIsError] = useState(false)
@@ -21,6 +29,13 @@ export function Input({ placeholder = "Digite aqui...", hasError = false }: Prop
     ? principal["purple-base"]
     : base["gray-600"]
 
+    const currentBorderColor = 
+    isError
+    ? feedback["danger-base"]
+    :(isFocused || hasText)
+    ? principal["purple-base"]
+    : base["gray-300"]
+
   useEffect(() => {
     if (hasError) {
       setIsError(true)
@@ -30,12 +45,14 @@ export function Input({ placeholder = "Digite aqui...", hasError = false }: Prop
   }, [hasError])
 
   return (
-    <View style={[styles.container, { borderColor: currentColor }]}>
+    <View style={[styles.container, { borderColor: currentBorderColor }]}>
       <SpriteIcon
-        name="calendar"
+        name={icon}
         color={currentColor}
       />
-      <Text style={[styles.text, { color: currentColor }]}>R$</Text>
+      {label && (
+        <Text style={[styles.text, { color: currentColor }]}>R$</Text>
+      )}
       <TextInput
         style={styles.input}
         placeholder={placeholder}

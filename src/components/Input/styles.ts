@@ -2,13 +2,13 @@ import { StyleSheet } from "react-native"
 import { colors } from "@/styles/colors";
 import { typography } from "@/styles/typography";
 
-const { base, principal } = colors
+const { base } = colors
 const { titleMd, textMd } = typography
 
 export const styles = StyleSheet.create({
   container: {
     color: base["gray-600"],
-    width: "100%",
+    flex: 1,
     flexDirection: "row",
     alignItems: "center",
     gap: 8,
